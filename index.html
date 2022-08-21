@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <script src="javascript.js" defer></script>
+
+    <div id="white"></div>
+    <div id="background"></div> 
+    <div id="game"></div>
+
+    <div class="tools">
+        <div>
+            <div class="header">Etch-a-Sketch</div>
+        </div>
+        <div class="settings">
+            <div id="chooseNum">Сетка 16×16</div>
+            <div>
+                <input type="number" id="number" value='16' />
+                <button class="ok">ок</button>
+            </div>  
+        </div>
+
+        <div class="settings">
+            <div class="chooseColor">Выберете цвет:</div>
+            <input type="color" id="color" class="chooseColor"/>
+        </div>
+
+        <div class="settings">
+            <div class="regime">Выберете режим рисования:</div>
+            <div>
+                <button id="colorBackground" class="colorBackground" onclick="play(1);"><a href="#" title="Фон"><img src="https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=2000" class="ikon"></a></button>
+                <button id="write" class="color" onclick="play(2);"><a href="#" title="Палитра"><img src="https://stihi.ru/pics/2015/02/06/6631.jpg" class="ikon"></a></button>
+                <button id="pen" class="pen" onclick="play(3);"><a href="#" title="Карандаш"><img src="https://st.depositphotos.com/1223903/3541/v/600/depositphotos_35415511-stock-illustration-pencil-icon.jpg" class="ikon"></a></button>
+                <button id="random" class="random" onclick="play(4);"><a href="#" title="Рандомные цвета"><img src="https://naikom.ru/img/blog/190210/colorwheel.jpg" class="ikon"></a></button>
+                <button id="eraser" class="eraser" onclick="play(5);"><a href="#" title="Ластик"><img src="https://mpng.subpng.com/20180806/ptq/kisspng-eraser-text-clip-art-illustration-paper-clip-5b6858865823d2.780332181533565062361.jpg" class="ikon"></a></button>
+            </div>
+        </div>
+
+        <div class="slayder">
+            <button class="left"><img src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-74c5ba577e8e163d232a745208400deb.png" class="arrow"></button>
+            <button class="slaid" onclick="changeBackground(1);"><img src="https://bipbap.ru/wp-content/uploads/2020/01/1504514575_youloveit_ru_risovanie_po_kletochkam05.png" class="image"></button>
+            <button class="slaid" onclick="changeBackground(2);"><img src="https://flomaster.club/uploads/posts/2021-11/1637297689_5-flomaster-club-p-piksel-art-nyan-ket-po-kletochkam-krasivie-5.png" class="image"></button>
+            <button class="slaid" onclick="changeBackground(3);"><img src="https://kartinkin.net/uploads/posts/2021-07/1627402003_8-kartinkin-com-p-piksel-art-ikonki-art-krasivo-10.png" class="image"></button>
+            <button class="slaid" onclick="changeBackground(4);"><img src="https://thumbs.dreamstime.com/b/%D0%B4%D0%B5%D0%B2%D1%83%D1%88%D0%BA%D0%B0-%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5-%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0-%D0%BF%D0%B8%D0%BA%D1%81%D0%B5%D0%BB%D0%B5%D0%B9-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%83%D1%8E-%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE%D0%BC-182694478.jpg" class="image"></button>
+            <button class="slaid" onclick="changeBackground(5);"><img src="https://bipbap.ru/wp-content/uploads/2020/01/1504514665_youloveit_ru_risovanie_po_kletochkam03.png" class="image"></button>
+            <button class="slaid" onclick="changeBackground(6);"><img src=" https://kartinkin.net/uploads/posts/2021-07/1626227720_27-kartinkin-com-p-piksel-art-bolshoi-art-krasivo-29.png" class="image"></button>
+            <button class="right"><img src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-bec00a74bb6540dcf874b799fe19ae92.png" class="arrow"></button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
