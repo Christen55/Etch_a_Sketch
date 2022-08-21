@@ -1,0 +1,135 @@
+body{
+    font-family: "Veles-Regular.0.9.2";
+    display: flex;
+    justify-content: space-between;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    #white{
+        left: 8.5px;
+        top: 8px;
+        width: 680px;
+        height: 680px;
+        position: absolute;
+        z-index: 1;
+        opacity: 1;
+        background-color: white;
+    }
+
+    #background{
+        left: 8.5px;
+        top: 8px;
+        width: 680px;
+        height: 680px;
+        position: absolute;
+        z-index: 2;
+        opacity: 0;
+        background-size: cover;
+    }
+        .opacity{
+            opacity: 0.5;
+        }
+
+    #game{
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: row;
+        width: 680px;
+        height: 680px;
+        flex-wrap: wrap;
+        margin: 0px;
+        gap:0px;
+        border: 1px solid black;
+    }
+        .square{
+            border: 1px solid black;
+        }
+    
+    .tools{
+        display: flex;
+        flex-direction: column;
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        gap:40px;
+    }
+        div{
+            text-align: center;
+        }
+            .header{
+                font-size: 48px;
+                color: rgb(226, 40, 111);
+                font-weight: bold;
+            }
+
+        .settings{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:8px;
+        }
+            .ikon{
+                width: 30px;
+                height: 30px;
+            }
+            #number{
+                width: 40px;
+            }
+
+            .buttonClick{
+                background-color:darkturquoise;
+            }  
+
+        .slayder{
+            display: flex;
+        }
+                .arrow{
+                    width: 30px;
+                }
+
+            .slaid{
+                display: none;
+            }
+                .image{
+                    width: 200px;
+                    height: 200px; 
+                }
+
+@font-face{
+    font-family: "Veles-Regular.0.9.2";
+    src: url("./Veles-Regular.0.9.2.otf") format("truetype");
+    font-style: normal;
+}
+
+@media screen and (max-width: 800px){ 
+    body{
+        font-size: 10px;
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+    #background,
+    #game{
+        width: 400px;
+        height: 400px;
+    }
+    .header{
+        font-size: 36px;
+    } 
+    
+}
+@media screen and (max-width: 400px){ 
+    #background,
+    #game{
+        width: 280px;
+        height: 280px;
+    }
+    .header{
+        font-size: 26px;
+    } 
+    .image{
+        width: 100px;
+        height: 100px; 
+    }
+}
