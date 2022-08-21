@@ -6,7 +6,7 @@ let isRandom=false;
 let isPen=false;
 let isWriteMobile=false;
 let isPenMobile=false;
-let color;
+let colorSquare;
 let colorRand;
 let colorRandom;
 let blackcolor;
@@ -66,7 +66,7 @@ function create(num){
 let colors=Array.from(document.querySelectorAll('.color'));
 colors.forEach((color)=>{
     color.addEventListener('click', ()=> {
-        color=document.getElementById('color').value;
+        colorSquare=document.getElementById('color').value;
     });
 });
 
@@ -85,7 +85,7 @@ function play(variant){
             isPenMobile=false; 
             if(isBackground){
                 let background=document.getElementById('background');
-                background.style.background=`${color}`;
+                background.style.background=`${colorSquare}`;
                 background.style.opacity=0.3;
             }
         break;
@@ -107,7 +107,7 @@ function play(variant){
 
                 square.addEventListener('mouseenter', function (e) {
                     if(isWrite){
-                        e.target.style.background=`${color}`;
+                        e.target.style.background=`${colorSquare}`;
                         determine=+e.target.style.opacity;
                         if(determine<1){
                             highlight(determine);
@@ -145,7 +145,7 @@ function play(variant){
             squares.forEach((square) =>{
                 square.addEventListener('mouseenter', function (e) {
                     if(isWriteMobile){
-                        e.target.style.background=`${color}`;
+                        e.target.style.background=`${colorSquare}`;
                         determine=+e.target.style.opacity;
                         if(determine<1){
                             highlight(determine);
@@ -178,7 +178,7 @@ function play(variant){
                 square.addEventListener('mouseenter', function (e) {
                     e.target.style.opacity=1;   
                     if(isPen){    
-                        e.target.style.background=`${color}`;  
+                        e.target.style.background=`${colorSquare}`;  
                         x=e.offSetX;
                         y=e.offSetY; 
                     }                 
@@ -207,7 +207,7 @@ function play(variant){
                 square.addEventListener('mouseenter', function (e) {
                     e.target.style.opacity=1;   
                     if(isPenMobile){    
-                        e.target.style.background=`${color}`;  
+                        e.target.style.background=`${colorSquare}`;  
                         x=e.offSetX;
                         y=e.offSetY; 
                     }                   
