@@ -9,13 +9,13 @@
 </head>
 <body>
     <script src="javascript.js" defer></script>
-
     <div>
         <div id="white"></div>
         <div id="background"></div> 
         <div id="game"></div>
     </div>
     
+
     <div class="tools">
         <div>
             <div class="header">Etch-a-Sketch</div>
@@ -36,11 +36,14 @@
         <div class="settings">
             <div class="regime">Выберете режим рисования:</div>
             <div>
-                <button id="colorBackground" class="colorBackground" onclick="play(1);"><a href="#" title="Фон"><img src="https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=2000" class="ikon"></a></button>
+                <button id="colorBackground" class="color" onclick="play(1);"><a href="#" title="Фон"><img src="https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=2000" class="ikon"></a></button>
                 <button id="write" class="color" onclick="play(2);"><a href="#" title="Палитра"><img src="https://stihi.ru/pics/2015/02/06/6631.jpg" class="ikon"></a></button>
-                <button id="pen" class="pen" onclick="play(3);"><a href="#" title="Карандаш"><img src="https://st.depositphotos.com/1223903/3541/v/600/depositphotos_35415511-stock-illustration-pencil-icon.jpg" class="ikon"></a></button>
-                <button id="random" class="random" onclick="play(4);"><a href="#" title="Рандомные цвета"><img src="https://naikom.ru/img/blog/190210/colorwheel.jpg" class="ikon"></a></button>
-                <button id="eraser" class="eraser" onclick="play(5);"><a href="#" title="Ластик"><img src="https://mpng.subpng.com/20180806/ptq/kisspng-eraser-text-clip-art-illustration-paper-clip-5b6858865823d2.780332181533565062361.jpg" class="ikon"></a></button>
+                <button id="writeMobile" class="color" onclick="play(3);"><a href="#" title="Палитра"><img src="https://stihi.ru/pics/2015/02/06/6631.jpg" class="ikon"></a></button>
+                <button id="pen" class="color" onclick="play(4);"><a href="#" title="Карандаш"><img src="https://st.depositphotos.com/1223903/3541/v/600/depositphotos_35415511-stock-illustration-pencil-icon.jpg" class="ikon"></a></button>
+                <button id="penMobile" class="color" onclick="play(5);"><a href="#" title="Карандаш"><img src="https://st.depositphotos.com/1223903/3541/v/600/depositphotos_35415511-stock-illustration-pencil-icon.jpg" class="ikon"></a></button>
+                <button id="random" class="random" onclick="play(6);"><a href="#" title="Рандомные цвета"><img src="https://naikom.ru/img/blog/190210/colorwheel.jpg" class="ikon"></a></button>
+                <button id="eraser" class="eraser" onclick="play(7);"><a href="#" title="Ластик"><img src="https://mpng.subpng.com/20180806/ptq/kisspng-eraser-text-clip-art-illustration-paper-clip-5b6858865823d2.780332181533565062361.jpg" class="ikon"></a></button>
+                
             </div>
         </div>
 
@@ -54,7 +57,7 @@
             <button class="slaid" onclick="changeBackground(6);"><img src=" https://kartinkin.net/uploads/posts/2021-07/1626227720_27-kartinkin-com-p-piksel-art-bolshoi-art-krasivo-29.png" class="image"></button>
             <button class="right"><img src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-bec00a74bb6540dcf874b799fe19ae92.png" class="arrow"></button>
         </div>
-        
+             
     </div>
     
 </body>
