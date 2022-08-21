@@ -111,7 +111,8 @@ body{
         align-items: center;
     }
     #background,
-    #game{
+    #game,
+    #white{
         width: 500px;
         height: 500px;
         align-self: center;
@@ -125,7 +126,8 @@ body{
 }
 @media screen and (max-width: 400px){ 
     #background,
-    #game{
+    #game,
+    #white{
         width: 280px;
         height: 280px;
     }
