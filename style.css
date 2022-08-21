@@ -7,8 +7,8 @@ body{
     background-size: cover;
 }
     #white{
-        margin-left: 8.5px;
-        margin-top: 8px;
+        margin-left: 0px;
+        margin-top: 0px;
         width: 680px;
         height: 680px;
         position: absolute;
@@ -18,8 +18,8 @@ body{
     }
 
     #background{
-        margin-left: 8.5px;
-        margin-top: 8px;
+        margin-left: 1px;
+        margin-top: 0px;
         width: 680px;
         height: 680px;
         position: absolute;
@@ -102,7 +102,6 @@ body{
     src: url("./Veles-Regular.0.9.2.otf") format("truetype");
     font-style: normal;
 }
-
 @media screen and (max-width: 800px){ 
     body{
         font-size: 10px;
@@ -121,9 +120,13 @@ body{
     }
     .header{
         font-size: 36px;
-    } 
-    
+    }  
+    #write,
+    #pen{
+        display:none;
+    }
 }
+
 @media screen and (max-width: 400px){ 
     #background,
     #game,
