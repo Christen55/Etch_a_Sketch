@@ -4,6 +4,8 @@ let isEraser=false;
 let isWrite=false;
 let isRandom=false;
 let isPen=false;
+let isWriteMobile=false;
+let isPenMobile=false;
 let color;
 let colorRand;
 let colorRandom;
@@ -53,50 +55,49 @@ function create(num){
         div.className="square";
         let w=document.querySelector('#game');
         let widthGame=+w.offsetWidth-2;
+        console.log(widthGame);
         let size=(widthGame/num)-2;
         div.style.width=`${size}px`;
         div.style.height=`${size}px`;
         game.append(div);      
     }   
 }
-         
-document.querySelector('.colorBackground').addEventListener('click', ()=> {
-    colorBackground=document.getElementById('color').value;
-});
-    
-document.querySelector('.color').addEventListener('click', ()=> {
-    color=document.getElementById('color').value;
+  
+let colors=Array.from(document.querySelectorAll('.color'));
+colors.forEach((color)=>{
+    color.addEventListener('click', ()=> {
+        color=document.getElementById('color').value;
+    });
 });
 
-document.querySelector('.pen').addEventListener('click', ()=> {
-    penColor=document.getElementById('color').value;
-});
         
 function play(variant){
     let squares=Array.from(document.querySelectorAll('.square'));
     switch(variant){
         case 1:
             dial("colorBackground");
+            isWriteMobile=false;
             isEraser=false;
             isBackground=true;
             isRandom=false; 
             isPen=false;
-            isWrite=false;  
-            console.log('jkjl');
-            console.log(colorBackground);
+            isWrite=false;
+            isPenMobile=false; 
             if(isBackground){
                 let background=document.getElementById('background');
-                background.style.background=`${colorBackground}`;
+                background.style.background=`${color}`;
                 background.style.opacity=0.3;
             }
         break;
-               
+
         case 2:
             dial("write");
+            isWriteMobile=false;
             isEraser=false;
             isBackground=false;
             isRandom=false; 
             isPen=false;
+            isPenMobile=false; 
             squares.forEach((square) =>{
                 square.addEventListener('mousedown', function (e) {   
                     x=e.offSetX;
@@ -133,12 +134,41 @@ function play(variant){
         break;    
                 
         case 3:
+            dial("writeMobile");
+            isWriteMobile=true;
+            isEraser=false;
+            isBackground=false;
+            isRandom=false; 
+            isPen=false;
+            isWrite=false; 
+            isPenMobile=false;  
+            squares.forEach((square) =>{
+                square.addEventListener('mouseenter', function (e) {
+                    if(isWriteMobile){
+                        e.target.style.background=`${color}`;
+                        determine=+e.target.style.opacity;
+                        if(determine<1){
+                            highlight(determine);
+                        }
+                            function highlight(determine){
+                                determine+=0.1;
+                                e.target.style.opacity=determine;
+                            }
+                    }            
+                });
+            });
+
+        break; 
+
+        case 4:
             dial("pen");
             squares.forEach((square) =>{
+                isWriteMobile=false;
                 isBackground=false;
                 isRandom=false;
                 isWrite=false;
-                isEraser=false;     
+                isEraser=false;   
+                isPenMobile=false;   
                 square.addEventListener('mousedown', function (e) {   
                     x=e.offSetX;
                     y=e.offSetY;
@@ -148,7 +178,7 @@ function play(variant){
                 square.addEventListener('mouseenter', function (e) {
                     e.target.style.opacity=1;   
                     if(isPen){    
-                        e.target.style.background=`${penColor}`;  
+                        e.target.style.background=`${color}`;  
                         x=e.offSetX;
                         y=e.offSetY; 
                     }                 
@@ -162,16 +192,38 @@ function play(variant){
                     }          
                 });      
             });
-
         break; 
 
-        case 4:
+        case 5:
+            dial("penMobile");
+            isWriteMobile=false;
+            isEraser=false;
+            isBackground=false;
+            isRandom=false; 
+            isPen=false;
+            isWrite=false; 
+            isPenMobile=true;  
+            squares.forEach((square) =>{
+                square.addEventListener('mouseenter', function (e) {
+                    e.target.style.opacity=1;   
+                    if(isPenMobile){    
+                        e.target.style.background=`${color}`;  
+                        x=e.offSetX;
+                        y=e.offSetY; 
+                    }                   
+                });
+            });
+        break;
+
+        case 6:
             dial("random");
             isBackground=false;
+            isWriteMobile=false;
             isRandom=true;
             isWrite=false;
             isEraser=false; 
             isPen=false;    
+            isPenMobile=false; 
             squares.forEach((square) =>{
                 square.addEventListener('mouseenter', function (e) {
                     e.target.style.opacity=1;
@@ -187,16 +239,17 @@ function play(variant){
                     }            
                 });
             });
+        break;
 
-        break; 
-
-        case 5:
+        case 7:
             dial("eraser"); 
+            isWriteMobile=false;
             isBackground=false;
             isRandom=false;
             isWrite=false;
             isEraser=true;  
-            isPen=false;  
+            isPen=false; 
+            isPenMobile=false;  
             squares.forEach((square) =>{
                 square.addEventListener('click', function (e) {
                     if(isEraser){
@@ -220,17 +273,18 @@ function play(variant){
                     }    
                 };       
             });  
-            
         break;
     }            
 }
 
 function dial(choice){
     document.getElementById("colorBackground").classList.remove('buttonClick');
+    document.getElementById("writeMobile").classList.remove('buttonClick');
     document.getElementById("write").classList.remove('buttonClick');
     document.getElementById("eraser").classList.remove('buttonClick');  
     document.getElementById("random").classList.remove('buttonClick');
     document.getElementById("pen").classList.remove('buttonClick');
+    document.getElementById("penMobile").classList.remove('buttonClick');
     document.getElementById(choice).classList.add('buttonClick');
 }
 
