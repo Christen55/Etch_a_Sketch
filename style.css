@@ -110,7 +110,6 @@ body{
 }
 @media screen and (max-width: 800px){ 
     body{
-        font-size: 10px;
         display: flex;
         flex-direction: column-reverse; 
         align-items: center;
@@ -133,7 +132,10 @@ body{
     }
 }
 
-@media screen and (max-width: 400px){ 
+@media screen and (max-width: 400px){
+    body{
+        font-size: 10px;
+    }
     #background,
     #game,
     #white{
