@@ -55,14 +55,17 @@ function create(num){
         div.className="square";
         let w=document.querySelector('#game');
         let widthGame=+w.offsetWidth-2;
-        console.log(widthGame);
         let size=(widthGame/num)-2;
         div.style.width=`${size}px`;
         div.style.height=`${size}px`;
         game.append(div);      
     }   
 }
-  
+
+  let color=document.getElementById('color');
+  color.onclick=function (){
+    dial('color');
+  };
 let colors=Array.from(document.querySelectorAll('.color'));
 colors.forEach((color)=>{
     color.addEventListener('click', ()=> {
@@ -143,7 +146,7 @@ function play(variant){
             isWrite=false; 
             isPenMobile=false;  
             squares.forEach((square) =>{
-                square.addEventListener('mouseenter', function (e) {
+                square.addEventListener('click', function (e) {
                     if(isWriteMobile){
                         e.target.style.background=`${colorSquare}`;
                         determine=+e.target.style.opacity;
@@ -204,7 +207,7 @@ function play(variant){
             isWrite=false; 
             isPenMobile=true;  
             squares.forEach((square) =>{
-                square.addEventListener('mouseenter', function (e) {
+                square.addEventListener('click', function (e) {
                     e.target.style.opacity=1;   
                     if(isPenMobile){    
                         e.target.style.background=`${colorSquare}`;  
@@ -251,14 +254,14 @@ function play(variant){
             isPen=false; 
             isPenMobile=false;  
             squares.forEach((square) =>{
-                square.addEventListener('click', function (e) {
+                square.addEventListener('dblclick', function (e) {
                     if(isEraser){
                         e.target.style.background='white';
                         e.target.style.opacity=0;  
                     }
                 });
     
-                square.oncontextmenu= function (e) {
+                square.onclick= function (e) {
                     if(isEraser){
                         determine=+e.target.style.opacity;
                         if(determine>0){
@@ -268,8 +271,6 @@ function play(variant){
                                 determine-=0.1;
                                 e.target.style.opacity=determine;
                             }
-
-                        return false;
                     }    
                 };       
             });  
@@ -285,6 +286,7 @@ function dial(choice){
     document.getElementById("random").classList.remove('buttonClick');
     document.getElementById("pen").classList.remove('buttonClick');
     document.getElementById("penMobile").classList.remove('buttonClick');
+    document.getElementById("color").classList.remove('buttonClick');
     document.getElementById(choice).classList.add('buttonClick');
 }
 
