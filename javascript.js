@@ -18,7 +18,6 @@ document.querySelector('.ok').addEventListener('click', ()=> {
     if((Math.floor(num))!=num){
         num=0;
     }
-    
     if(num!=0){
         for(i=0; i<num*num; i++){
             let div=document.querySelector('.square');
